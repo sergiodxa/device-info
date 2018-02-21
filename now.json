@@ -1,0 +1,10 @@
+{
+  "name": "device-info",
+  "alias": "device-info.now.sh",
+  "type": "static",
+  "public": true,
+  "files": [
+    "index.html",
+    "now.json"
+  ]
+}

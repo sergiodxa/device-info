@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Device Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
+  <style>
+    main {
+      margin: 1em;
+      max-width: 1000px;
+      width: calc(100% - 1em);
+    }
+
+    @media (min-width: 720px) {
+      main {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Device Info</h1>
+
+    <div for="size-width">
+      <strong>Width:</strong>
+      <span id="size-width"></span>
+    </div>
+
+    <hr />
+
+    <div for="size-height">
+      <strong>Height:</strong>
+      <span id="size-height"></span>
+    </div>
+
+    <hr />
+
+    <div for="avail-width">
+      <strong>Available Width:</strong>
+      <span id="avail-width"></span>
+    </div>
+
+    <hr />
+
+    <div for="avail-height">
+      <strong>Available Height:</strong>
+      <span id="avail-height"></span>
+    </div>
+
+    <hr />
+
+    <div for="pixel-depth">
+      <strong>Pixel Depth:</strong>
+      <span id="pixel-depth"></span>
+    </div>
+
+    <hr />
+
+    <div for="color-depth">
+      <strong>Color Depth:</strong>
+      <span id="color-depth"></span>
+    </div>
+
+    <hr />
+
+    <div for="device-pixel-ratio">
+      <strong>Device Pixel Ratio:</strong>
+      <span id="device-pixel-ratio"></span>
+    </div>
+
+    <hr />
+
+    <div for="inner-width">
+      <strong>Inner Width:</strong>
+      <span id="inner-width"></span>
+    </div>
+
+    <hr />
+
+    <div for="inner-height">
+      <strong>Inner Height:</strong>
+      <span id="inner-height"></span>
+    </div>
+
+    <hr />
+
+    <div for="user-agent">
+      <strong>User agent:</strong>
+      <span id="user-agent"></span>
+    </div>
+
+    <hr />
+
+    <div for="platform">
+      <strong>Platform:</strong>
+      <span id="platform"></span>
+    </div>
+
+    <hr />
+
+    <div for="languages">
+      <strong>Languages:</strong>
+      <span id="languages"></span>
+    </div>
+
+    <hr />
+  </main>
+
+  <script>
+    function checkSizes() {
+      var screen = window.screen;
+
+      document
+        .getElementById("size-width")
+        .innerText = screen.width;
+      document
+        .getElementById("size-height")
+        .innerText = screen.height;
+      document
+        .getElementById("avail-width")
+        .innerText = screen.availWidth;
+      document
+        .getElementById("avail-height")
+        .innerText = screen.availHeight;
+      document
+        .getElementById("pixel-depth")
+        .innerText = screen.pixelDepth;
+      document
+        .getElementById("color-depth")
+        .innerText = screen.colorDepth;
+      document
+        .getElementById("device-pixel-ratio")
+        .innerText = window.devicePixelRatio;
+      document
+        .getElementById("inner-width")
+        .innerText = window.innerWidth;
+      document
+        .getElementById("inner-height")
+        .innerText = window.innerHeight;
+      document
+        .getElementById("user-agent")
+        .innerText = navigator.userAgent;
+      document
+        .getElementById("platform")
+        .innerText = navigator.platform;
+      document
+        .getElementById("languages")
+        .innerText = navigator.languages.join(", ");
+    }
+
+    window.addEventListener("resize", checkSizes);
+    window.addEventListener("deviceorientation", checkSizes);
+  </script>
+</body>
+
+</html>
